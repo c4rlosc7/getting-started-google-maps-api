@@ -16,8 +16,9 @@ var app = angular.module('App', ['ngMaterial']);
 app.controller('AppCtrl', function($scope, $mdDialog) {
 	
 	var map;
+	var location = { lat: 6.244203, lng: -75.5812119 };
 	$scope.showMap = false;
-	$scope.showBtnMap = false;
+	$scope.showBtnMap = false;	
 
 	var getGeolocation = function(){
         /* Option */
@@ -41,15 +42,24 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
         navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 	};
 
-	getGeolocation();	
+	//getGeolocation();	
 			
 	$scope.initMap = function(){
 		$scope.showMap = true;
 		$scope.showBtnMap = true;		
 		map = new google.maps.Map(document.getElementById('map'), {
-		  center: {lat: -34.397, lng: 150.644},
-		  zoom: 8
+			scaleControl: true,
+		  	center: location,
+		  	zoom: 10
 		});
+
+        var infowindow = new google.maps.InfoWindow;
+        infowindow.setContent('<h2>I AM HERE!!!</h2>');
+
+        var marker = new google.maps.Marker({map: map, position: location});
+        marker.addListener('click', function() {
+          infowindow.open(map, marker);
+        });		
 	};
 
 	$scope.hideMap = function(){
