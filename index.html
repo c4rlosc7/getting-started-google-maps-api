@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="map"></div>
+    <div>
+      <h1>Information about map</h1>
+    </div>
+    <script src="app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFgVvHo10DF2gOR4NsgNVAMKhCr1wvC_g&callback=initMap"
+    async defer></script>
+  </body>
+</html>
+<!--
+El atributo async permite que el navegador represente el resto de tu sitio web mientras se carga la Maps JavaScript API. Cuando la API esté lista, llamará a la función especificada usando el parámetro callback.
+-->
