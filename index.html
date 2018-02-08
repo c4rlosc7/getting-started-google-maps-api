@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="map"></div>
-    <div>
-      <h1>Information about map</h1>
-    </div>
-    <script src="app.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFgVvHo10DF2gOR4NsgNVAMKhCr1wvC_g&callback=initMap"
-    async defer></script>
-  </body>
+<html ng-app="App">
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/angular-material.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Geolocation</title>
+    </head>
+    <body ng-controller="AppCtrl">
+      <div id="map" ng-show="showMap" layout="row" layout-align="center center">
+      </div>
+      <div layout="row" ng-hide="showBtnMap" layout-align="center center">
+        <img src="img/logo-maps.png" alt="">
+      </div>      
+      <div layout="row" layout-align="center center">
+        <md-button ng-hide="showBtnMap" ng-click="initMap()" class="md-raised md-primary">
+          Show Map
+        </md-button>
+        <md-button ng-show="showMap" ng-click="hideMap()" class="md-raised md-primary">
+          Hide Map
+        </md-button>
+      </div>
+
+      <script type="text/javascript" src="js/angular.min.js"></script>
+      <script type="text/javascript" src="js/angular-animate.min.js"></script>
+      <script type="text/javascript" src="js/angular-aria.min.js"></script>
+      <script type="text/javascript" src="js/angular-messages.min.js"></script>
+      <script type="text/javascript" src="js/angular-material.min.js"></script>
+      <script type="text/javascript" src="app.js"></script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBr2EUUZ4TrfdG3ORbe9ChY5MZaHIcDlzQ&language=es&region=COL"></script>
+    </body>
 </html>
 <!--
 El atributo async permite que el navegador represente el resto de tu sitio web mientras se carga la Maps JavaScript API. Cuando la API esté lista, llamará a la función especificada usando el parámetro callback.
