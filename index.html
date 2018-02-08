@@ -6,14 +6,15 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/angular-material.min.css">
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <title>Geolocation</title>
+        <title>My Google Map</title>
     </head>
     <body ng-controller="AppCtrl">
+      <h1>My Google Map</h1>
       <div id="map" ng-show="showMap" layout="row" layout-align="center center">
       </div>
       <div layout="row" ng-hide="showBtnMap" layout-align="center center">
         <img src="img/logo-maps.png" alt="">
-      </div>      
+      </div>
       <div layout="row" layout-align="center center">
         <md-button ng-hide="showBtnMap" ng-click="initMap()" class="md-raised md-primary">
           Show Map
