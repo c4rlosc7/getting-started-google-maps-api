@@ -17,14 +17,6 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
 
 	var map;
 	var location = { lat: 6.244203, lng: -75.5812119, content: '<h1>Medellín</h1>' };
-	// var bogota = { lat: 4.624335, lng: -74.063644, content: '<h1>Bogota</h1>' };
-	// var pereira = {
-	// 	lat: 4.8133300,
-	// 	lng: -75.6961100,
-	// 	content: '<h1>Pereira</h1>',
-	// 	iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png' };
-	// var cali = { lat: 3.4372200, lng: -76.5225000, content: '<h1>Cali</h1>' };
-	// var barranquilla = { lat: 10.9685400, lng: -74.7813200, content: '<h1>Barranquilla</h1>' };
 	var markers = [
 		{
 			lat: 6.244203,
@@ -78,7 +70,6 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
         /* Run Geolocation */
         navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
 	};
-
 	//getGeolocation(); scaleControl: true,
 
 	$scope.initMap = function(){
@@ -86,20 +77,7 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
 		$scope.showBtnMap = true;
 		/* New Map */
 		map = new google.maps.Map(document.getElementById('map'), set);
-		// /* Add Marker */
-    // var marker = new google.maps.Marker({
-		// 	map: map,
-		// 	position: location,
-		// 	icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-		// });
-    //
-		// var infowindow = new google.maps.InfoWindow({
-		// 	content: '<h2>I STAY HERE!!!</h2>'
-		// });
-    //
-    // marker.addListener('click', function() {
-    //   infowindow.open(map, marker);
-    // });
+
 		var addMarker = function(coords){
 			var marker = new google.maps.Marker({
 				position: coords,
@@ -117,11 +95,7 @@ app.controller('AppCtrl', function($scope, $mdDialog) {
 		    });
 			}
 		};
-		// addMarker(medellin);
-		// addMarker(bogota);
-		// addMarker(pereira);
-		// addMarker(cali);
-		// addMarker(barranquilla);
+
 		/* Loop markers */
 		for (var i = 0; i < markers.length; i++) {
 			addMarker(markers[i]);
