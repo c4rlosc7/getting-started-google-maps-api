@@ -13,3 +13,8 @@ html, body {
 h1{
   text-align: center;
 }
+
+.flags-map{
+    width: 20%;
+    height: 40%;
+}

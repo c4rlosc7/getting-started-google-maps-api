@@ -14,36 +14,25 @@ ZOOM
 var app = angular.module('App', ['ngMaterial']);
 
 app.controller('AppCtrl', function($scope, $mdDialog) {
-
 	var map;
-	var location = { lat: 6.244203, lng: -75.5812119, content: '<h1>Medellín</h1>' };
+	var location = { lat: -17.0000000, lng:  -65.0000000, content: '<h1>Medellín</h1>' };
 	var markers = [
-		{
-			lat: 6.244203,
-			lng: -75.5812119,
-			content: '<h1>Medellín</h1>'
-		},
-		{
-			lat: 4.8133300,
-			lng: -75.6961100,
-			content: '<h1>Pereira</h1>',
-			iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-		},
-		{
-			lat: 3.4372200,
-			lng: -76.5225000,
-			content: '<h1>Cali</h1>'
-		},
-		{
-			lat: 10.9685400,
-			lng: -74.7813200,
-			content: '<h1>Barranquilla</h1>'
-		}
+		{ id: 0, country: "Venezuela", lat: 8.0000000, lng: -66.0000000, content: '<h1>Venezuela</h1>' },
+		{ id: 1, country: "Colombia", lat: 4.0000000, lng: -72.0000000, content: '<h1>Colombia</h1><br><img class="flags-map" src="image/flags/flag-colombia.png" alt="Colombia">',
+		iconImage: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png' },
+		{ id: 2, country: "Ecuador", lat: -2.0000000, lng: -77.5000000, content: '<h1>Cali</h1>' },
+		{ id: 3, country: "Perú", lat: -12.0431800, lng: -77.0282400, content: '<h1>Perú</h1>' },
+		{ id: 4, country: "Brazil", lat: -10.0000000, lng: -55.0000000, content: '<h1>Brazil</h1>'},
+		{ id: 5, country: "Bolivia", lat:  -17.0000000, lng: -65.0000000, content: '<h1>Bolivia</h1>'},
+		{ id: 6, country: "Chile", lat: -33.4569400, 	lng: -70.6482700, content: '<h1>Chile</h1>'},
+		{ id: 7, country: "Paraguay", lat: -23.0000000,	lng: -58.0000000, content: '<h1>Paraguay</h1>'},
+		{ id: 8, country: "Uruguay", lat: -33.0000000, 	lng: -56.0000000, content: '<h1>Uruguay</h1>'},
+		{ id: 9, country: "Argentina", lat: -34.0000000, lng: -64.0000000, content: '<h1>Argentina</h1>'}
 	];
 	/* Map Options */
 	var set = {
 		scaleControl: true,
-		zoom:5,
+		zoom:3,
 		center: location
 	};
 	$scope.showMap = false;
